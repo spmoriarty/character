@@ -46,6 +46,7 @@ bottomDropdown.addEventListener('change', () => {
 
 
 catchphraseButton.addEventListener('click', () => {
+    catchphraseInput.textContent = '';
     catchphrases.push(catchphraseInput.value);
     console.log(catchphraseInput.value);
     console.log(`Changed Phrase to ${catchphrases}`);
@@ -61,16 +62,16 @@ function displayStats() {
     let total = (top + middle + bottom);
     reportEl.textContent = `You have changed the head ${top} times, and the middle ${middle} times and the ${bottom} for a total of ${total} changes`;
     console.log('Stats changed');
-};
+}
 
 function displayCatchphrases() {
-    const phraseList = document.getElementById('phrase-list');
+    const phraseList = document.getElementById('phraseList');
     phraseList.textContent = '';
     for (let phrase of catchphrases){
         const li = document.createElement('li');
         li.textContent = phrase;
         phraseList.append(li);
-    }};
+    }}
 
 
     // clear out the DOM for the currently displayed catchphrases
