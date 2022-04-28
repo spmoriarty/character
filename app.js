@@ -1,8 +1,6 @@
 // import functions and grab DOM elements
 const headDropdown = document.getElementById('head-dropdown');
 
-
-
 const middleDropdown = document.getElementById('middle-dropdown');
 
 const bottomDropdown = document.getElementById('bottom-dropdown');
@@ -19,6 +17,7 @@ const catchphraseButton = document.getElementById('catchphrase-button');
 let head = 0;
 let middle = 0;
 let bottom = 0;
+let report = 0;
 let catchphrases = [];
 
 // set state for how many times the user changes the head, middle, and bottom
@@ -26,8 +25,7 @@ let catchphrases = [];
 
 headDropdown.addEventListener('change', () => {
     headEl.style.backgroundImage = `url('./assets/${headDropdown.value}-head.png')`;
-    head++;
-    displayStats = head;
+    report++;
     console.log('Changing the head to', `${headDropdown.value}-head`);
 });
 
@@ -75,6 +73,7 @@ catchphraseButton.addEventListener('click', () => {
 });
 
 function displayStats() {
+    countHead.textContent = `'You have changed the head ${head.value}'`
     // text content of the reportEl to tell the user how many times they've changed each piece of the state
 }
 
