@@ -9,7 +9,7 @@ const bottomDropdown = document.getElementById('bottom-dropdown');
 const headEl = document.getElementById('head');
 const middleEl = document.getElementById('middle');
 const bottomEl = document.getElementById('bottom');
-const reportEl = document.getElementById('report');
+const reportEl = document.getElementById('changes');
 const catchphrasesEl = document.getElementById('catchphrases');
 const catchphraseInput = document.getElementById('catchphrase-input');
 const catchphraseButton = document.getElementById('catchphrase-button');
@@ -49,11 +49,11 @@ bottomDropdown.addEventListener('change', () => {
     bottomEl.style.backgroundImage = `url('./assets/${bottomDropdown.value}-pants.png')`;
     bottom++;
     console.log('Changing the pants to', `${bottomDropdown.value}`);
+
     // get the value of the bottom dropdown
 
     // increment the bottom change count state
     
-    // update the dom for the bottom (NOTE use style.backgroundImage on the bottomEl div instead of trying to set the .src -- it's NOT an img tag!)
 
     // update the stats to show the new count (call displayStats() to do this work)
 });
@@ -70,7 +70,8 @@ catchphraseButton.addEventListener('click', () => {
 });
 
 function displayStats() {
-    head.textContent = `You have changed the head ${head.value} times`;
+    return reportEl.textContent = `You have changed the head ${head} times, the body ${middle} times, and the pants ${bottom} times for a total of ${report} changes`;
+   
 
     // text content of the reportEl to tell the user how many times they've changed each piece of the state
 }
