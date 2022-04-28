@@ -25,22 +25,21 @@ let catchphrases = [];
 
 headDropdown.addEventListener('change', () => {
     headEl.style.backgroundImage = `url('./assets/${headDropdown.value}-head.png')`;
-    report++;
+    head++;
     console.log('Changing the head to', `${headDropdown.value}-head`);
 });
-
-
-    // get the value of the head dropdown
-
-    // increment the head change count state
     
-    // update the dom for the head (use style.backgroundImage on the headEl div instead of trying to set the .src -- it's NOT an img tag!)
+    // increment the head change count state
 
     // update the stats to show the new count (call displayStats() to do this work)
 
 
 
 middleDropdown.addEventListener('change', () => {
+    middleEl.style.backgroundImage = `url('./assets/${middleDropdown.value}-middle.png')`;
+    middle++;
+    console.log('Changing the middle to', `${middleDropdown.value}-middle`);
+
     // get the value of the middle dropdown
 
     // increment the middle change count state
