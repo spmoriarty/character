@@ -14,10 +14,9 @@ const catchphrasesEl = document.getElementById('catchphrases');
 const catchphraseInput = document.getElementById('catchphrase-input');
 const catchphraseButton = document.getElementById('catchphrase-button');
 
-let head = 0;
+let top = 0;
 let middle = 0;
 let bottom = 0;
-let report = 0;
 let catchphrases = [];
 
 // set state for how many times the user changes the head, middle, and bottom
@@ -25,8 +24,10 @@ let catchphrases = [];
 
 headDropdown.addEventListener('change', () => {
     headEl.style.backgroundImage = `url('./assets/${headDropdown.value}-head.png')`;
-    head++;
+    top++;
+    displayStats ();
     console.log('Changing the head to', `${headDropdown.value}-head`);
+    
 });
     
     // increment the head change count state
@@ -39,7 +40,7 @@ middleDropdown.addEventListener('change', () => {
     middleEl.style.backgroundImage = `url('./assets/${middleDropdown.value}-middle.png')`;
     middle++;
     console.log('Changing the middle to', `${middleDropdown.value}-middle`);
-
+    displayStats = (middle.value);
     // increment the middle change count state
     
     // update the stats to show the new count (call displayStats() to do this work)
@@ -48,8 +49,9 @@ middleDropdown.addEventListener('change', () => {
 bottomDropdown.addEventListener('change', () => { 
     bottomEl.style.backgroundImage = `url('./assets/${bottomDropdown.value}-pants.png')`;
     bottom++;
+    displayStats = (bottom.value); 
     console.log('Changing the pants to', `${bottomDropdown.value}`);
-
+    
     // get the value of the bottom dropdown
 
     // increment the bottom change count state
@@ -70,11 +72,12 @@ catchphraseButton.addEventListener('click', () => {
 });
 
 function displayStats() {
-    return reportEl.textContent = `You have changed the head ${head} times, the body ${middle} times, and the pants ${bottom} times for a total of ${report} changes`;
+    countElm.top.textcontent = `You have changed the head ${top} times.`;
    
 
     // text content of the reportEl to tell the user how many times they've changed each piece of the state
-}
+};
+
 
 function displayCatchphrases() {
     // clear out the DOM for the currently displayed catchphrases
