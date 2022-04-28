@@ -45,7 +45,8 @@ bottomDropdown.addEventListener('change', () => {
 
 
 catchphraseButton.addEventListener('click', () => {
-    catchphraseInput.textContent = [`${catchphrases}`];
+    catchphrases.push(catchphraseInput.value);
+    console.log(`Changed Phrase to ${catchphrases}`);
     displayCatchphrases ();
 });
     // get the value of the catchphrase input
