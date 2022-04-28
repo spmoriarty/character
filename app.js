@@ -28,7 +28,7 @@ headDropdown.addEventListener('change', () => {
     headEl.style.backgroundImage = `url('./assets/${headDropdown.value}-head.png')`;
     head++;
     displayStats = head;
-    console.log('Changing the head to', `url('./assets/${headDropdown.value}-head.png')`);
+    console.log('Changing the head to', `${headDropdown.value}-head`);
 });
 
 
