@@ -48,6 +48,7 @@ middleDropdown.addEventListener('change', () => {
 bottomDropdown.addEventListener('change', () => { 
     bottomEl.style.backgroundImage = `url('./assets/${bottomDropdown.value}-pants.png')`;
     bottom++;
+    console.log('Changing the pants to', `${bottomDropdown.value}`);
     // get the value of the bottom dropdown
 
     // increment the bottom change count state
